@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "xdotool"
+version = "0.1.0"
+description = ""
+authors = ["Tlaloc-Es <dev@tlaloc-es.com>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/Tlaloc-Es/xdotool"
+repository = "https://github.com/Tlaloc-Es/xdotool"
+keywords = ["pxdotool"]
+packages = [{include = "xdotool"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "*"
+pytest = "*"
+black = "*"
+mypy = "*"
+ipykernel = "*"
+ipython = "*"
+commitizen = "*"
+poethepoet = "*"
+isort = "*"
+
+
+[tool.commitizen]
+version = "1.2.0"
+version_files = [
+    "pyproject.toml:^version"
+]
+tag_format = "$version"
