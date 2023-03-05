@@ -35,9 +35,8 @@ def key(
 
 
 def selectwindow():
-    result = subprocess.check_output(
-        ["xdotool", "selectwindow", "getmouselocation", "--shell"]
-    )
+    command = ["xdotool", "selectwindow", "getmouselocation", "--shell"]
+    result = subprocess.check_output(command)
     result = result.decode("utf-8").splitlines()
     return {
         "X": result[0].replace("X=", ""),
@@ -48,4 +47,5 @@ def selectwindow():
 
 
 def windowactivate(window: str | int):
-    subprocess.call(["xdotool", "windowactivate", str(window)])
+    command = ["xdotool", "windowactivate", str(window)]
+    subprocess.call(command)
