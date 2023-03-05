@@ -7,7 +7,15 @@
 
 </div>
 
-Library to use pose estimation in your projects easily.
+Library to use xdotool with python.
+## Prerequisites
+
+### Ubuntu
+
+```bash
+sudo apt-get install xdotool
+```
+
 ## Instalation [![PyPI](https://img.shields.io/pypi/v/xdotool.svg)](https://pypi.org/project/xdotool/)
 
 You can install `xdotool` from [Pypi](https://pypi.org/project/xdotool/). It's going to install the library itself and its prerequisites as well.
