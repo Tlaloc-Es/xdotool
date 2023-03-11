@@ -34,6 +34,70 @@ def key(
     subprocess.call(command)
 
 
+def keydown(
+    keysequence: List[str],
+    clearmodifiers: Optional[bool] = None,
+    delay: Optional[float | str] = None,
+    repeat: Optional[int | str] = None,
+    repeat_delay: Optional[float | str] = None,
+    window: Optional[str] = None,
+) -> None:
+    command = ["xdotool", "keydown"]
+
+    if clearmodifiers:
+        command.append("--clearmodifiers")
+
+    if delay:
+        command.extend(["--delay", str(delay)])
+
+    if repeat:
+        command.extend(["--repeat", str(repeat)])
+
+    if repeat_delay:
+        command.extend(["--repeat-delay", str(repeat_delay)])
+
+    if window:
+        command.extend(["--window", str(window)])
+
+    command.extend(keysequence)
+
+    print(" ".join(command))
+
+    subprocess.call(command)
+
+
+def keyup(
+    keysequence: List[str],
+    clearmodifiers: Optional[bool] = None,
+    delay: Optional[float | str] = None,
+    repeat: Optional[int | str] = None,
+    repeat_delay: Optional[float | str] = None,
+    window: Optional[str] = None,
+) -> None:
+    command = ["xdotool", "keyup"]
+
+    if clearmodifiers:
+        command.append("--clearmodifiers")
+
+    if delay:
+        command.extend(["--delay", str(delay)])
+
+    if repeat:
+        command.extend(["--repeat", str(repeat)])
+
+    if repeat_delay:
+        command.extend(["--repeat-delay", str(repeat_delay)])
+
+    if window:
+        command.extend(["--window", str(window)])
+
+    command.extend(keysequence)
+
+    print(" ".join(command))
+
+    subprocess.call(command)
+
+
 def selectwindow():
     command = ["xdotool", "selectwindow", "getmouselocation", "--shell"]
     result = subprocess.check_output(command)
