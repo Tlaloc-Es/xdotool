@@ -6,12 +6,8 @@ def proccess_batch(commands: List):
     command_to_execute = []
 
     for command, args in commands:
-        command_to_execute.extend(command(**args, execute=False))
-
-    command_to_execute = [i for i in command_to_execute if i != "xdotool"]
-    command_to_execute = ["xdotool"] + command_to_execute
-
-    subprocess.call(command_to_execute)
+        process = subprocess.Popen(command(**args, execute=False))
+        process.wait()
 
 
 def key(
